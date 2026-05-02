@@ -37,7 +37,19 @@ function App() {
   ];
 
   //creo la variabile di stato
-  const [isActive, setIsActive] = useState(false)
+  const [isActive, setIsActive] = useState(null)
+  const [color, setColor] = useState('lightBlue')
+
+  function toggleCard(id) {
+    console.log(id)
+    if (isActive === id) {
+      return setIsActive(null)
+    }
+    setIsActive(id);
+  }
+
+
+
   return (
     <>
       <h1>Learn Web Development</h1>
@@ -49,9 +61,14 @@ function App() {
         {
           languages.map((item) => (
             <div className="card" key={item.id}>
-              <button>{item.title}</button>
+
+
+              {<button onClick={() => toggleCard(item.id)} style={{ backgroundColor: isActive ? 'yellow' : 'lightBlue' }}>{item.title}</button>}
+
+
               {
-                isActive && <div className="content">{item.description}</div>
+                isActive === item.id &&
+                (<div className="content">{item.description}</div>)
               }
 
 
