@@ -20,4 +20,20 @@
   .content {
     padding-right: 2rem;
   }
+
+}
+
+.container-card2 {
+  display: flex;
+  margin: 0.5rem;
+  padding: 1rem;
+  border: 2px solid black;
+
+  .container-button {
+    padding: 0.5rem
+  }
+
+  button {
+    width: 100px;
+  }
 }
